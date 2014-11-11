@@ -79,6 +79,12 @@ libraryDependencies ++= Seq(
 // merely as a test dependency), which we need for TypeTag usage.
 libraryDependencies <+= (scalaVersion)("org.scala-lang" % "scala-reflect" % _)
 
+dependencyOverrides ++= Set(
+ "org.eclipse.jetty.orbit" % "javax.transaction" % "1.1.1.v201105210645",
+ "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016",
+ "org.eclipse.jetty.orbit" % "javax.mail.glassfish" % "1.4.1.v201005082020"
+)
+
 // Enable forking (see sbt docs) because our full build (including tests) uses many threads.
 fork := true
 
